@@ -12,10 +12,10 @@
   
 </head>
 
-<body style="background-color: antiquewhite;" data-barba="wrapper">
+<body  data-barba="wrapper">
 
   <main data-barba="container" data-barba-namespace="single">
-    <div class="main">
+    <div class="main" style="background-color: antiquewhite;">
       <h4>single的内容</h4>
       <a href="a.html">a</a>
       <a href="b.html">b</a>
@@ -30,14 +30,14 @@
       // 基础动画
       transitions: [{
         name: 'single',
-        leave(data) {
-          console.log(data.current.container)
-          console.log("离开single")
-          gsap.to("body", { duration: 2, x: 500 })
-        },
+        // leave(data) {
+        //   console.log(data.current.container)
+        //   console.log("离开single")
+        //   gsap.to("body", { duration: 2, x: -100 }) 这个总是起作用了，和enter种一样
+        // },
         enter(data) {
           console.log("进入single")
-          gsap.from("body", { duration: 5, y: 1000 })
+          gsap.from("body", { duration: 2, y: 500 , opacity: 0 })
         },
         beforeEnter(){
             console.log('body');
