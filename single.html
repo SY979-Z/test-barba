@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single</title>
+</head>
+<body style="background-color: antiquewhite;" data-barba="a-myname">
+
+        <main data-barba="container" data-barba-namespace="home">
+            
+        </main>
+
+    <script>
+    import barba from '@barba/core';
+
+    barba.init({
+        schema: {
+            prefix: 'a-myname',
+            wrapper: 'wrap'
+        }
+    });
+    </script>
+
+</body>
+</html>
