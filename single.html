@@ -1,26 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Single</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+  
 </head>
-<body style="background-color: antiquewhite;" data-barba="a-myname">
 
-        <main data-barba="container" data-barba-namespace="home">
-            
-        </main>
+<body style="background-color: antiquewhite;" data-barba="wrapper">
 
-    <script>
-    import barba from '@barba/core';
+  <main data-barba="container" data-barba-namespace="single">
+    <div class="main">
+      <h4>single的内容</h4>
+      <a href="a.html">a</a>
+      <a href="b.html">b</a>
+      <a href="c.html">c</a>
+      <a href="single.html">single</a>
+      <a href="single2.html">single2</a>
+    </div>
+  </main>
 
+  <script>
     barba.init({
-        schema: {
-            prefix: 'a-myname',
-            wrapper: 'wrap'
+      // 基础动画
+      transitions: [{
+        name: 'single',
+        leave(data) {
+          console.log(data.current.container)
+          console.log("离开single")
+          gsap.to("body", { duration: 2, x: 500 })
+        },
+        enter(data) {
+          console.log("进入single")
+          gsap.from("body", { duration: 5, y: 1000 })
+        },
+        beforeEnter(){
+            console.log('body');
         }
+      }]
     });
-    </script>
+  </script>
 
 </body>
+
 </html>

@@ -1,9 +1,6 @@
 console.log('Hello Barba');
 
 import barba from '@barba/core';
-import barbaCss from '@barba/css';
-
-barba.use(barbaCss);
 
 const body = document.querySelector('body');
 
@@ -21,52 +18,31 @@ barba.init({
         {
             name: 'home',
             sync: true,
-            once(){
-                //with css plugin ,this will not run
-                console.log('home');
-            },
-            leave(){},
-            enter(){}
-        },{
-            name: 'fade',
-            to: {
-                namespace: ['fade']
-            },
-            once(){
-                //with css plugin ,this will not run
-                console.log('fade');
-            },
             leave(){
-                
+                console.log('leave home');
             },
             enter(){
-                
+                console.log('enter home');
             }
         },{
-            name: 'clip',
-            sync: true,
-            to: {
-                namespace: ['clip']
-            },
+            name: 'bhome',
             leave(){
-                
+                console.log('leave bhome');
             },
             enter(){
-                
+                console.log('enter bhome');
+            }
+        },{
+            name: 'chome',
+            sync: true,
+            leave(){
+                console.log('leave chome');
+            },
+            enter(){
+                console.log('enter chome');
             },
             beforeEnter(){
-                console.log('clip page loaded');
-            }
-        },{
-            name: 'with-cover',
-            to: {
-                namespace: ['with-cover']
-            },
-            leave(){
-                
-            },
-            enter(){
-                
+                console.log('c page loaded');
             }
         }
     ]

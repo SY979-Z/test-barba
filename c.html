@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CCCC</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCCC</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script type="module" src="js/index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
 </head>
-<body style="background-color: skyblue;" data-barba="c-myname">
 
-      
-        <main data-barba="container" data-barba-namespace="home">
-            <a href="a.html">a</a>
-            <a href="b.html">b</a>
-            <a href="c.html">c</a>
-        </main>
+<body  data-barba="wrapper" style="background-color: skyblue;">
 
-    <script>
-    import barba from '@barba/core';
-
-    barba.init({
-        transitions: [{
-            name: 'c-myname',
-            leave(data) {
-            return gsap.to(data.current.container, {
-                opacity: 0
-            });
-            },
-            enter(data) {
-            return gsap.from(data.next.container, {
-                opacity: 0
-            });
-            }
-        }]
-    });
-</script>
+  <main data-barba="container" data-barba-namespace="chome">
+    <div class="main" >
+      <h4>c的内容</h4>
+      <a href="a.html">a</a>
+      <a href="b.html">b</a>
+      <a href="c.html">c</a>
+      <a href="single.html">single</a>
+    </div>
+  </main>
 </body>
+
 </html>
